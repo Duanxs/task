@@ -27,9 +27,10 @@ export default [
   // user login
   {
     url: '/user/login',
-    type: 'post',
+    type: 'get',
     response: config => {
-      const { username } = config.body
+      console.log(config.query)
+      const { username } = config.query
       const token = tokens[username]
 
       // mock error
